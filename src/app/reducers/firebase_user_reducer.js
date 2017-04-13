@@ -7,6 +7,10 @@ import {
   CHANGE_FIREBASE_USER_PASSWORD,
   FIREBASE_PASSWORD_RESET_EMAIL,
   LOGOUT_FIREBASE_USER,
+
+  SET_MESSAGE,
+  GET_MESSAGES,
+
 } from '../actions/types';
 
 
@@ -28,6 +32,12 @@ export default function (state = null, action) {
         return action.payload;
     case LOGIN_WITH_PROVIDER_FIREBASE:
         return action.payload;
+
+    case SET_MESSAGE:
+        return action.payload;
+    case GET_MESSAGES:
+        return action.payload;
+
     default:
         return state;
     }

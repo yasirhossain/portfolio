@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setMessage } from '../../actions/firebase_actions';
 
 class ChatInput extends Component {
 
@@ -12,8 +14,7 @@ class ChatInput extends Component {
       event.preventDefault();
 
       const chatMessage = this.refs.chatMessage.value;
-      // Send to Firebase here
-      console.log(chatMessage);
+      this.props.setMessage(chatMessage);
       this.refs.chatMessage.value = '';
     }
 
@@ -35,11 +36,13 @@ class ChatInput extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-
+  return bindActionCreators({
+      setMessage,
+  }, dispatch);
 }
 
 function mapStateToProps(state) {
-
+  return { currentUser: state.currentUser };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChatInput);

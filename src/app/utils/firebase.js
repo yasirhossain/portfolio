@@ -147,6 +147,51 @@ const FireBaseTools = {
    * @returns {!firebase.database.Reference|firebase.database.Reference}
    */
     getDatabaseReference: path => firebaseDb.ref(path),
+
+  /**
+   * Get messages from firebase database
+   *
+   * @param path {!string|string}
+   * @returns {!firebase.database.Reference|firebase.database.Reference}
+   */
+    getMessages: (path) => firebaseDb.ref(path).on('value', snapshot => {
+      const messages = snapshot.val();
+      return messages
+    }),
+
+  /**
+   * Send message to firebase database
+   *
+   * @param path {!string|string}
+   * @returns {!firebase.database.Reference|firebase.database.Reference}
+   */
+    sendMessage: (uid, displayName, message) => firebaseDb.ref('messages')
+    .push({
+      uid,
+      displayName,
+      message,
+      createdAt: firebase.database.ServerValue.TIMESTAMP
+    }).then(error => ({
+        errorCode: error.code,
+        errorMessage: error.message,
+    })),
+
+  /**
+   * Send message to firebase database
+   *
+   * @param path {!string|string}
+   * @returns {!firebase.database.Reference|firebase.database.Reference}
+   */
+    setMessage: (uid, displayName, message) => firebaseDb.ref('messages')
+    .set({
+      uid,
+      displayName,
+      message,
+      createdAt: firebase.database.ServerValue.TIMESTAMP
+    }).then(error => ({
+        errorCode: error.code,
+        errorMessage: error.message,
+    })),
 };
 
 export default FireBaseTools;

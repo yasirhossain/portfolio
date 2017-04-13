@@ -8,6 +8,10 @@ import {
   CHANGE_FIREBASE_USER_PASSWORD,
   FIREBASE_PASSWORD_RESET_EMAIL,
   LOGOUT_FIREBASE_USER,
+
+  SET_MESSAGE,
+  GET_MESSAGES,
+
 } from './types';
 
 
@@ -73,4 +77,32 @@ export function logoutUser(user) {
         type: LOGOUT_FIREBASE_USER,
         payload: request,
     };
+}
+
+export function sendMessage(message) {
+  const uid = 1;
+  const displayName = 'Guest';
+  const request = FireBaseTools.sendMessage(uid, displayName, message);
+  return {
+    type: SET_MESSAGE,
+    payload: request,
+  };
+}
+
+export function setMessage(message) {
+  const uid = 1;
+  const displayName = 'Guest';
+  const request = FireBaseTools.setMessage(uid, displayName, message);
+  return {
+    type: SET_MESSAGE,
+    payload: request,
+  };
+}
+
+export function getMessages(path) {
+  const request = FireBaseTools.getMessages(path);
+  return {
+    type: GET_MESSAGES,
+    payload: request,
+  };
 }
