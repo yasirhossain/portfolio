@@ -1,12 +1,9 @@
 import React from 'react';
 
-import Chat from './chat/chat_index'
-
 export default () => {
   return (
     <div>
-      <h1>Interactive Components</h1>
-      <Chat />
+      <h1>Contact View</h1>
     </div>
   );
 };

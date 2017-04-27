@@ -1,23 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import { Router, browserHistory } from 'react-router';
-import ReduxPromise from 'redux-promise';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import reducers from './reducers';
-import routes from './routes';
+import App from './components/app';
+
+import HomeIndex from './components/index_home';
+import Contact from './components/contact';
 
 import 'bootstrap-social';
 
 // for bundling your styles
 import './bundle.scss';
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-
-
 ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-        <Router history={browserHistory} routes={routes} />
-    </Provider>
-  , document.querySelector('.react-root'));
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={HomeIndex} />
+      <Route path="/contact" component={Contact} />
+    </Route>
+  </Router>
+  , document.getElementById('root'));
