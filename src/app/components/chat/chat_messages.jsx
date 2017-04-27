@@ -23,8 +23,8 @@ class ChatMessages extends Component {
 
   render() {
     return (
-      <div className="container">
-        <ul>
+      <div>
+        <ul className="list-unstyled">
           <li>{this.state.message.message}</li>
         </ul>
       </div>

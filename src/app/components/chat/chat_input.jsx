@@ -18,7 +18,7 @@ class ChatInput extends Component {
   render() {
     return (
       <div>
-        <div className="container">
+        <div>
           <h2>Chat</h2>
           <form id="frmChat" role="form" onSubmit={this.onChatSend}>
             <input
