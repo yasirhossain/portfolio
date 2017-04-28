@@ -1,0 +1,17 @@
+.poll {
+  li {
+    @include transition(all, .3s, ease-in-out);
+    position: relative;
+    background: red;
+    height: 40px;
+    label {
+      position: absolute;
+      &.title {
+        left: 2%;
+      }
+      &.value {
+        right: 2%;
+      }
+    }
+  }
+}
