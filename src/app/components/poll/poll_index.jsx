@@ -57,7 +57,7 @@ class Poll extends Component {
 
   render() {
     return (
-      <div className="poll">
+      <div className="poll component-container">
         <h1>{this.state.pollData.title}</h1>
         <ul className="list-unstyled">
           {

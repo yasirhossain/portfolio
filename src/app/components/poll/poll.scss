@@ -19,7 +19,7 @@
     .bar {
       @include transition(all, .3s, ease-in-out);
       z-index: 0;
-      background: red;
+      background: #00cbff;
     }
   }
 }
