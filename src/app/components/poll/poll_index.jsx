@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 
 class Poll extends Component {
   constructor(props) {
@@ -25,12 +26,17 @@ class Poll extends Component {
       };
   }
 
-  getVotes(event) {
-    console.log('getting votes');
-  }
-
   componentDidMount() {
     this.getVotes();
+  }
+
+  getVotes = () => {
+    const pollRef = firebase.database().ref('poll');
+    pollRef.on('value', snapshot => {
+      if (snapshot.val() !== null) {
+        this.setState({ pollData: snapshot.val().message });
+      }
+    });
   }
 
   castVote = (response) => {
@@ -38,6 +44,12 @@ class Poll extends Component {
       if (response.label === vote.label) {
         vote.value ++;
         this.state.pollData.total ++;
+
+        firebase.database().ref('poll').set({
+          message: this.state.pollData,
+          createdAt: firebase.database.ServerValue.TIMESTAMP
+        });
+
         this.setState(this.state);
       }
     })
@@ -54,9 +66,10 @@ class Poll extends Component {
                 width: `${(vote.value / this.state.pollData.total) * 100}%`
               }
               return (
-                <li key={vote.label} onClick={this.castVote.bind(this, vote)} style={pollStyle}>
+                <li key={vote.label} onClick={this.castVote.bind(this, vote)}>
                   <label className="title">{vote.label}</label>
                   <label className="value">{vote.value}</label>
+                  <div className="bar" style={pollStyle}></div>
                 </li>
               )
             })

@@ -1,17 +1,25 @@
 .poll {
   li {
-    @include transition(all, .3s, ease-in-out);
     position: relative;
-    background: red;
     height: 40px;
-    label {
+    width: 100%;
+    label, div {
       position: absolute;
+      height: 100%;
+    }
+    label {
+      z-index: 1;
       &.title {
         left: 2%;
       }
       &.value {
         right: 2%;
       }
+    }
+    .bar {
+      @include transition(all, .3s, ease-in-out);
+      z-index: 0;
+      background: red;
     }
   }
 }

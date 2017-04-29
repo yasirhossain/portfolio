@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { setMessage } from '../../actions/firebase_actions';
+import firebase from 'firebase';
 
 class ChatInput extends Component {
   constructor(props) {
@@ -11,7 +11,12 @@ class ChatInput extends Component {
     event.preventDefault();
 
     const chatMessage = this.refs.chatMessage.value;
-    setMessage(chatMessage);
+
+    firebase.database().ref('messages').set({
+      message: chatMessage,
+      createdAt: firebase.database.ServerValue.TIMESTAMP
+    });
+
     this.refs.chatMessage.value = '';
   }
 
