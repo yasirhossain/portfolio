@@ -7,15 +7,52 @@
   transition-timing-function: $effect;
 }
 
+html {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 body {
+  font-family: 'Roboto', sans-serif;
+
   font-size: 16px;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f5f8+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #f3f5f8 0%,#eef2f3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f3f5f8 0%,#eef2f3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f3f5f8 0%,#eef2f3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  h1, h2, h3 {
+    font-weight: 700;
+  }
+
+  label {
+    font-weight: 300;
+  }
+
+  .navbar {
+    background: #fff;
+    font-weight: 400;
+    .navbar-nav {
+      > li {
+        > a {
+          color: #b2b2b3;
+          &.active {
+            color: #6665ff;
+          }
+        }
+      }
+    }
+  }
 
   .active {
     color: blue;
   }
 
   .component-container {
-    background: #e6f1f3;
+    background: #fff;
     padding: 2%;
     margin: 2% auto;
   }

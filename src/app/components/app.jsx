@@ -5,7 +5,7 @@ class App extends Component {
   renderNavMenu() {
     return (
       <ul className="nav navbar-nav">
-        <li><Link to="/" activeClassName="active">About</Link></li>
+        <li><Link to="/"><i className="fa fa-home"></i></Link></li>
         <li><Link to="/components" activeClassName="active">Components</Link></li>
         <li><Link to="/portfolio" activeClassName="active">Portfolio</Link></li>
         <li><Link to="/contact" activeClassName="active">Contact</Link></li>
@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
-       <nav className="navbar navbar-default">
+       <nav className="navbar">
          <div className="container-fluid">
            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               {this.renderNavMenu()}

@@ -68,7 +68,7 @@ class Poll extends Component {
               return (
                 <li key={vote.label} onClick={this.castVote.bind(this, vote)}>
                   <label className="title">{vote.label}</label>
-                  <label className="value">{vote.value}</label>
+                  <label className="value">{((vote.value / this.state.pollData.total) * 100).toFixed(0)}%</label>
                   <div className="bar" style={pollStyle}></div>
                 </li>
               )
