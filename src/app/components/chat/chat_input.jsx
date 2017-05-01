@@ -24,7 +24,6 @@ class ChatInput extends Component {
     return (
       <div>
         <div>
-          <h2>Chat</h2>
           <form id="frmChat" role="form" onSubmit={this.onChatSend}>
             <input
               type="chatMessage" className="form-control" id="txtChat" ref="chatMessage" placeholder="Say Something..."
