@@ -13,7 +13,6 @@ class ChatMessages extends Component {
   getMessages(event) {
     const messagesRef = firebase.database().ref('messages');
     messagesRef.on('value', snapshot => {
-      this.setState({ message: '' });
       this.setState({ message: snapshot.val().message });
     });
   }
