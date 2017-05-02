@@ -57,7 +57,7 @@ class Poll extends Component {
 
   render() {
     return (
-      <div className="poll component-container shadow">
+      <div className="poll component-container box-shadow">
         <h1>{this.state.pollData.title}</h1>
         <ul className="list-unstyled">
           {
@@ -75,7 +75,7 @@ class Poll extends Component {
             })
           }
         </ul>
-        <label className="total">{this.state.pollData.total} Total Votes</label>
+        <label className="total">{this.state.pollData.total} Votes</label>
       </div>
     );
   }

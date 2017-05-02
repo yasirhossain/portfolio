@@ -6,7 +6,7 @@ import ChatInput from './chat_input';
 class Chat extends Component {
   render() {
     return (
-      <div className="chat component-container shadow">
+      <div className="chat component-container box-shadow">
         <h2>Chat</h2>
 
         <ChatMessages />

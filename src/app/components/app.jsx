@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
-       <nav className="navbar shadow">
+       <nav className="navbar box-shadow">
          <div className="container-fluid">
            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               {this.renderNavMenu()}
