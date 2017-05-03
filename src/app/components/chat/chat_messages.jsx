@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import firebase from 'firebase';
 
 class ChatMessages extends Component {
@@ -10,10 +12,10 @@ class ChatMessages extends Component {
       this.getMessages = this.getMessages.bind(this);
   }
 
-  getMessages(event) {
+  getMessages() {
     const messagesRef = firebase.database().ref('messages');
     messagesRef.on('value', snapshot => {
-      this.setState({ message: snapshot.val().message });
+      this.setState({ message: snapshot.val() });
     });
   }
 
@@ -22,11 +24,15 @@ class ChatMessages extends Component {
   }
 
   render() {
+    const message = this.state.message;
     return (
-      <div>
-        <ul className="list-unstyled">
-          <li className="message">{this.state.message}</li>
-        </ul>
+      <div className="message">
+        <ReactCSSTransitionGroup
+          transitionName="message"
+          transitionEnterTimeout={0}
+          transitionLeaveTimeout={0}>
+          <div key={message.message}>{message.message}</div>
+       </ReactCSSTransitionGroup>
       </div>
     );
   }
