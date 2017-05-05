@@ -7,47 +7,59 @@
   transition-timing-function: $effect;
 }
 
-html {
+html, body, #root, #root > div {
   position: relative;
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-
   font-size: 16px;
+  color: #fff;
+  font-family: courier, serif;
 
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f5f8+100 */
-  background: #ffffff; /* Old browsers */
-  background: -moz-linear-gradient(top, #f3f5f8 0%,#eef2f3 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #f3f5f8 0%,#eef2f3 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #f3f5f8 0%,#eef2f3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-color: #1A1A1A;
 
   h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    margin-top: 0;
   }
 
   h2 {
-    margin-top: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 18px;
   }
 
   label {
     font-weight: 300;
   }
 
+  .call-out {
+    color: #FF5252;
+  }
+  .badge {
+    background: #00BCD4;
+  }
+
   a {
-    color: #6665ff;
+    color: #00BCD4;
   }
 
   input.form-control {
+    @include transition(all, .2s, ease-in-out);
     border: 0 none;
     box-shadow: none;
-    border-bottom: 1px solid #b2b2b3;
+    border-bottom: 1px solid #3a3a3a;
     border-radius: 0;
     padding: 0;
+    background: transparent;
     &:focus {
-      border-color: #6665ff;
+      border-color: #00BCD4;
       outline: 0;
       -webkit-box-shadow: none;
       box-shadow: none;
@@ -59,22 +71,39 @@ body {
   }
 
   .navbar {
-    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
     font-weight: 500;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
     .navbar-nav {
       > li {
         > a {
-          color: #b2b2b3;
+          color: #fff;
+          text-shadow: initial;
+          text-transform: uppercase;
+          font-weight: 700;
+          &:hover, &:focus, &:active {
+            background-color: transparent;
+          }
           &.active {
-            color: #6665ff;
+            color: #00BCD4;
+          }
+          &:hover {
+            color: #00BCD4;
           }
         }
       }
     }
   }
 
+  .container {
+    height: calc(100% - 50px);
+  }
+
   .component-container {
-    background: #fff;
+    background: #232323;
     padding: 2%;
     margin: 2% auto;
   }

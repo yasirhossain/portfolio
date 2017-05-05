@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
+import styles from './poll.scss';
+
 class Poll extends Component {
   constructor(props) {
       super(props);

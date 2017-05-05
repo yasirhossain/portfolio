@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 
+import styles from './portfolio.scss';
+
 class Portfolio extends Component {
   constructor(props) {
       super(props);
@@ -36,12 +38,11 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <div className="portfolio component-container box-shadow">
-        <h2>Coming Soon...</h2>
+      <div className="portfolio component-container box-shadow container-fluid">
         {
           this.state.portfolioData.map((item, i) => {
             return (
-              <div className='item' key={item.id}>
+              <div className='item col-md-4' key={item.id}>
                 <img className='cover' src={item.covers.original} alt={item.name} />
                 <label>{item.name}</label>
                 <a href={item.url} target='_blank'>Details</a>
