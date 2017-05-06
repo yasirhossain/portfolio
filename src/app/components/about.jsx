@@ -5,7 +5,7 @@ import firebase from 'firebase';
 
 import Hearts from './hearts/hearts_index';
 
-import heroImage from '../static/sample.png';
+import heroImage from '../static/anime-yasir.png';
 
 const heroImageStyle = {
   background: `url(${heroImage}) 10% center no-repeat transparent`,
