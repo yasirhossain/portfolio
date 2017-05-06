@@ -4,7 +4,7 @@ import Portfolio from './portfolio/portfolio_index';
 
 export default () => {
   return (
-    <div>
+    <div className="section">
       <h1>Portfolio</h1>
       <Portfolio />
     </div>

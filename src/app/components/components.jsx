@@ -9,13 +9,15 @@ export const firebaseDb = firebaseApp.database();
 
 import Chat from './chat/chat_index';
 import Poll from './poll/poll_index';
+import Hearts from './hearts/hearts_index';
 
 export default () => {
   return (
-    <div>
+    <div className="section">
       <h1>Interactive Components</h1>
       <Chat />
       <Poll />
+      <Hearts />
     </div>
   );
 };

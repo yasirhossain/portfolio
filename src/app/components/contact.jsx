@@ -2,9 +2,9 @@ import React from 'react';
 
 export default () => {
   return (
-    <div className='contact component-container box-shadow'>
+    <div className="section">
       <h1>Contact</h1>
-      <div>
+      <div className="contact component-container box-shadow">
         <div className='card'>
           <label>Github</label>
           <a href='https://github.com/yasirhossain' target='_blank'>yasirhossain</a>

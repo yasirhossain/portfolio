@@ -1,4 +1,7 @@
 .about {
+  position: relative;
+  height: 100%;
+
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
@@ -8,10 +11,22 @@
   flex-wrap: wrap;
   display: flex;
 
-  position: relative;
-  height: 100%;
+  background: #CB356B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #BD3F32, #CB356B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  h1 {
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    font-size: 120px;
+    line-height: 105px;
+    letter-spacing: -5px;
+    padding: 0;
+  }
 
   .copy-container {
+    position: relative;
+    z-index: 1;
+
     display: -webkit-box;
     -webkit-box-orient: vertical;
     display: -webkit-flex;
@@ -21,12 +36,69 @@
 
     padding-left: 35%;
     padding-right: 5%;
+
+    .call-out {
+      color: #000;
+    }
+    .badge {
+      background-color: #000;
+    }
   }
-  h1 {
-    font-size: 120px;
-    line-height: 105px;
-    letter-spacing: -5px;
-    padding: 0;
+
+  .hero-container {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+
+    overflow: hidden;
+
+    .hero {
+      position: relative;
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-flow: column;
+      flex-flow: column;
+
+      height: 100%;
+      width: 100%;
+      max-height: 700px;
+      background: url('https://portfolio-b4cad.firebaseapp.com/assets/sample.png') 10% center no-repeat transparent;
+      background-size: contain;
+    }
+  }
+
+  .hearts {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    label {
+      position: relative;
+      right: 5px;
+      line-height: 60px;
+      float: left;
+      margin: 0;
+    }
+    i {
+      font-size: 60px;
+      color: #000;
+      float: left;
+    }
   }
 
   @media screen and (max-width: 991px) {
