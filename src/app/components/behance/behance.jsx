@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
-import styles from './portfolio.scss';
+import styles from './behance.scss';
 
-class Portfolio extends Component {
+class Behance extends Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -38,7 +37,7 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <div className="portfolio component-container box-shadow container-fluid">
+      <div className="behance component-container box-shadow container-fluid">
         {
           this.state.portfolioData.map((item, i) => {
             return (
@@ -55,4 +54,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default Behance;

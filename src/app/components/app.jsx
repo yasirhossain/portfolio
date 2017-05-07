@@ -6,8 +6,8 @@ class App extends Component {
     return (
       <ul className="nav navbar-nav">
         <li><Link to="/"><i className="fa fa-home"></i></Link></li>
-        <li><Link to="/portfolio" activeClassName="active">Portfolio</Link></li>
-        <li><Link to="/components" activeClassName="active">Components</Link></li>
+        <li><Link to="/code" activeClassName="active">Code</Link></li>
+        <li><Link to="/design" activeClassName="active">Design</Link></li>
         <li><Link to="/contact" activeClassName="active">Contact</Link></li>
       </ul>
     );

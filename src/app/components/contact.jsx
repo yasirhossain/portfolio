@@ -21,6 +21,10 @@ export default () => {
           <label>Instagram</label>
           <a href='https://www.instagram.com/ctrlaltdeceit/' target='_blank'>@ctrlaltdeceit</a>
         </div>
+        <div className='card'>
+          <label>Email</label>
+          <a href="mailto::yhossain@gmail.com">Mail</a>
+        </div>
       </div>
     </div>
   );

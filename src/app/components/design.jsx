@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Portfolio from './portfolio/portfolio_index';
+import Behance from './behance/behance';
 
 export default () => {
   return (
     <div className="section">
       <h1>Portfolio</h1>
-      <Portfolio />
+      <Behance />
     </div>
   );
 };

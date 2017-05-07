@@ -5,8 +5,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './components/app';
 
 import About from './components/about';
-import Components from './components/components';
-import Portfolio from './components/portfolio';
+import Code from './components/code';
+import Design from './components/design';
 import Contact from './components/contact';
 
 import 'bootstrap-social';
@@ -18,8 +18,8 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={About} />
-      <Route path="/components" component={Components} />
-      <Route path="/portfolio" component={Portfolio} />
+      <Route path="/code" component={Code} />
+      <Route path="/design" component={Design} />
       <Route path="/contact" component={Contact} />
     </Route>
   </Router>
