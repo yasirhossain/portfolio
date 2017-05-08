@@ -20,6 +20,7 @@
     label {
       z-index: 1;
       line-height: 40px;
+      text-shadow: 3px 3px 3px rgba(0,0,0,0.2);
       &.title {
         left: 2%;
       }
@@ -38,16 +39,16 @@
     }
 
     &:nth-child(1) .bar {
-      background: #a4b3e0;
+      background: #dc0d2b;
     }
     &:nth-child(2) .bar {
-      background: #ff7d5c;
+      background: #0094ea;
     }
     &:nth-child(3) .bar {
-      background: #7bdb92;
+      background: #ffd401;
     }
     &:nth-child(4) .bar {
-      background: #ffd841;
+      background: #a0cc9e;
     }
   }
 

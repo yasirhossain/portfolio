@@ -61,7 +61,7 @@ class Poll extends Component {
   render() {
     return (
       <div className="poll component-container box-shadow">
-        <h1>{this.state.pollData.title}</h1>
+        <h2>{this.state.pollData.title}</h2>
         <ul className="list-unstyled">
           {
             this.state.pollData.options.map((vote) => {

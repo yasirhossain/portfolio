@@ -37,14 +37,29 @@ class Behance extends Component {
 
   render() {
     return (
-      <div className="behance component-container box-shadow container-fluid">
+      <div className="behance">
         {
           this.state.portfolioData.map((item, i) => {
+            let itemStyle = {
+              background: `url(${item.covers['original']}) top center no-repeat transparent`,
+              backgroundSize: `cover`,
+            }
             return (
-              <div className='item col-md-4' key={item.id}>
-                <img className='cover' src={item.covers.original} alt={item.name} />
-                <label>{item.name}</label>
-                <a href={item.url} target='_blank'>Details</a>
+              <div className={"item " + (i < 2 ? 'col-md-6' : 'col-md-4')} key={item.id} style={itemStyle}>
+                <div className="item-info">
+                  <h2>{item.name}</h2>
+                  <div className="fields">
+                    {
+                      item.fields.map((field, i) => {
+                        return (
+                          <label key={field}>{field}</label>
+                        )
+                      })
+                    }
+                  </div>
+                  <a href={item.url} target='_blank' className="action-button">More Info</a>
+                </div>
+                <div className="item-bg"></div>
               </div>
             )
           })

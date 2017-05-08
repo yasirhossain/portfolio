@@ -1,14 +1,64 @@
 .behance {
+  &.component-container {
+    padding: 0;
+  }
   .item {
     text-align: center;
-    .cover {
+    height: 300px;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    &:hover {
+      .item-info {
+        top: 50%;
+        opacity: 1;
+        visibility: visible;
+      }
+      .item-bg {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .item-info {
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      color: #fff;
       width: 100%;
+      padding: 30px;
+      top: 100%;
+      opacity: 0;
+      visibility: hidden;
+      text-align: center;
+      -moz-transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+      -webkit-transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+      transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1;
+    }
+    .item-bg {
+      -moz-transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+      background: rgba(0, 121, 234, 0.85);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
     }
     label {
       width: 100%;
     }
     a {
-      width: 100%;
     }
   }
 }

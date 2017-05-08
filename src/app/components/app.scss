@@ -44,8 +44,12 @@ body {
     background: #00BCD4;
   }
 
+  .container-fluid {
+    padding-bottom: 40px;
+  }
+
   a {
-    color: #00BCD4;
+    color: #00bcd4;
     cursor: pointer;
     &:hover, &:focus, &:active {
       text-decoration: none;
@@ -75,7 +79,9 @@ body {
   .action-button {
     @include transition(all, .4s, ease-in-out);
     color: #fff;
-    border: 3px solid white;
+    border: 3px solid #000;
+    background-color: #000;
+
     border-radius: 45px;
     cursor: pointer;
     text-align: center;
@@ -83,7 +89,6 @@ body {
     font-weight: normal;
     font-size: 14px;
     text-transform: uppercase;
-    background-color: transparent;
     padding: 0 15px;
     margin-right: 15px;
     display: inline-block;
@@ -91,8 +96,9 @@ body {
       margin-right: 0px;
     }
     &:hover {
-      background-color: #000;
-      border-color: #000;
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff;
     }
   }
 
@@ -138,7 +144,7 @@ body {
       height: 100%;
       width: 100%;
       padding: 0 5%;
-      padding-top: 50px;
+      padding-top: 100px;
       overflow: auto;
     }
   }
