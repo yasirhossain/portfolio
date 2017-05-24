@@ -79,6 +79,7 @@
 
     overflow: hidden;
 
+    /*
     &:hover {
       .brain {
         opacity: 1;
@@ -89,6 +90,7 @@
         opacity: 1;
       }
     }
+    */
 
     .brain {
       @include transition(all, .4s, ease-in-out);
@@ -171,8 +173,20 @@
 
   @media screen and (max-width: 991px) {
     display: block;
+    &.section {
+      padding-top: 50px !important;
+    }
+    .hero-container {
+      max-height: 300px;
+    }
     .copy-container {
       padding: 0;
+      text-align: center;
+    }
+    .hearts {
+      position: fixed;
+      bottom: auto;
+      top: 50px;
     }
     h1 {
       font-size: 80px;

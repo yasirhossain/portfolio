@@ -1,33 +1,41 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+
+import About from './about';
+import Code from './code';
+import Design from './design';
+import Contact from './contact';
 
 class App extends Component {
-  renderNavMenu() {
-    return (
-      <ul className="nav navbar-nav">
-        <li><Link to="/"><i className="fa fa-home"></i></Link></li>
-        <li><Link to="/code" activeClassName="active">Code</Link></li>
-        <li><Link to="/design" activeClassName="active">Design</Link></li>
-        <li><Link to="/contact" activeClassName="active">Contact</Link></li>
-      </ul>
-    );
-  }
-
   render() {
     return (
-      <div>
-       <nav className="navbar">
-         <div className="container-fluid">
-           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              {this.renderNavMenu()}
-           </div>
-         </div>
-       </nav>
+      <Router>
+        <div>
+          <nav className="navbar">
+            <div className="container-fluid">
+              <ul className="nav navbar-nav">
+                <li><Link to="/"><i className="fa fa-home"></i></Link></li>
+                <li><Link to="/code">Code</Link></li>
+                <li><Link to="/design">Design</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+              </ul>
+            </div>
+          </nav>
 
-       <div className="container">
-           {this.props.children}
-       </div>
-     </div>
+          <div className="container">
+            <Route exact path="/" component={About} />
+            <Route path="/code" component={Code} />
+            <Route path="/design" component={Design} />
+            <Route path="/contact" component={Contact} />
+          </div>
+        </div>
+      </Router>
     );
   }
 }

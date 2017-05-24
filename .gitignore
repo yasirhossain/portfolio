@@ -4,7 +4,6 @@ logs
 npm-debug.log*
 
 #
-dist
 
 # Runtime data
 pids
@@ -19,6 +18,9 @@ coverage
 
 # nyc test coverage
 .nyc_output
+
+# design assets
+assets
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt

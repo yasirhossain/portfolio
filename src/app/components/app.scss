@@ -115,6 +115,7 @@ body {
     border: 0;
     .navbar-nav {
       > li {
+        float: left;
         > a {
           color: #fff;
           text-shadow: initial;
@@ -140,12 +141,28 @@ body {
     margin: 0;
     padding: 0;
     .section {
+      @include transition(all, .3s, ease-in-out);
+      position: absolute;
+
       background-color: #1A1A1A;
       height: 100%;
       width: 100%;
       padding: 0 5%;
       padding-top: 100px;
       overflow: auto;
+
+      &.state-transition-enter {
+        opacity: 0;
+      }
+      &.state-transition-enter.state-transition-enter-active {
+        opacity: 1;
+      }
+      &.state-transition-leave {
+        opacity: 1;
+      }
+      &.state-transition-leave.state-transition-leave-active {
+        opacity: 0;
+      }
     }
   }
 
@@ -165,6 +182,12 @@ body {
       a {
         width: 100%;
       }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .container .section {
+      padding-top: 50px;
     }
   }
 }
